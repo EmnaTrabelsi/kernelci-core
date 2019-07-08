@@ -128,6 +128,11 @@ test_plans:
     filters:
       - whitelist: {defconfig: ['kselftest']}
 
+  multinode_measurements:
+    name: 'multinode_measurements'
+    rootfs: debian_buster_nfs
+    pattern: 'multinode_measurements/multinode-lxc.jinja2'
+
   simple:
     rootfs: debian_buster_ramdisk
 
@@ -1336,7 +1341,7 @@ test_configs:
     test_plans: [boot]
 
   - device_type: sun8i_h2_plus_orangepi_zero
-    test_plans: [boot]
+    test_plans: [boot, multinode_measurements]
 
   - device_type: sun8i_h2_plus_orangepi_r1
     test_plans: [boot]
